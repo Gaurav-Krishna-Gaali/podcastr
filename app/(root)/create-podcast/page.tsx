@@ -85,11 +85,11 @@ const CreatePodcast = () => {
               render={({ field }) => (
                 <FormItem className="flex flex-col gap-2.5">
                   <FormLabel className="text-16 font-bold text-white-1">
-                    PodcastTitle
+                    Title
                   </FormLabel>
                   <FormControl>
                     <Input
-                      className="input-class focus-visible:ring-orange-1"
+                      className="input-class focus-visible:ring-offset-orange-1"
                       placeholder="Your Podcast "
                       {...field}
                     />
@@ -143,7 +143,7 @@ const CreatePodcast = () => {
                   </FormLabel>
                   <FormControl>
                     <Textarea
-                      className="input-class focus-visible:ring-orange-1"
+                      className="input-class focus-visible:ring-offset-orange-1"
                       placeholder="Write a short podcast description "
                       {...field}
                     />
@@ -154,7 +154,15 @@ const CreatePodcast = () => {
             />
           </div>
           <div className="flex flex-col pt-10">
-            <GeneratePodcast />
+            <GeneratePodcast
+              setAudioStorageId={setAudioStorageId}
+              setAudio={setAudioUrl}
+              voiceType={voiceType}
+              audio={audioUrl}
+              voicePrompt={voicePrompt}
+              setVoicePrompt={setvoicePrompt}
+              setAudioDuration={setaudioDuration}
+            />
             <GenerateThumbnail />
             <div className="mt-10 w-full">
               <Button className="text-16 w-full bg-orange-1 py-4 font-extrabold text-white-1 transition-all duration-500 hover:bg-black-1 ">
